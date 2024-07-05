@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  server:
+      image: nccdevpd.azurecr.io/ab-oc-ncc/docker-nodejs-sample:sample-nodejs
+      container_name: nodejsSampleApp
+      command: npm run dev
+      volumes:
+        - .:/usr/app/
+        - /usr/app/node_modules
+      ports:
+        - "80:3000"
